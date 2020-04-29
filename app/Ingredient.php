@@ -14,7 +14,10 @@ class Ingredient extends Model
         'name',
         'description',
         'quantity',
-        'product_id'        
+                
+    ];
+    protected $hidden = [
+        'pivot'
     ];
     public function products(){
         return $this->belongsToMany(Product::class);

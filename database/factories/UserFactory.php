@@ -75,8 +75,7 @@ $factory->define(Order::class, function (Faker $faker) {
     return [
         'quantity' => $faker->numberBetween(1,3),
         'customer_id' => $customer->id,
-        'product_id' => $seller->products->random()->id,
-        'total_price' => $faker->numberBetween(500,1000),
+        'product_id' => $seller->products->random()->id,        
         'paid' => $faker->randomElement([Order::PAID_ORDER, Order::UNPAID_ORDER]),
         'processed' => $faker->randomElement([Order::PROCESSED_ORDER, Order::UNPROCESSED_ORDER]),
         'delivered' => $faker->randomElement([Order::DELIVERED_ORDER, Order::UNDELIVERED_ORDER]),

@@ -87,9 +87,7 @@ class Handler extends ExceptionHandler
             if($errorCode == 1451){
                 return $this->errorResponse("This resource cannot be removed permanently as it is related with another one",409); 
                        }
-            if ($errorCode == 1048) {
-                return $this->errorResponse("Cant perform update with empty/null fields", 409);
-            }
+            
         
         }
         if(config('app.debug')){

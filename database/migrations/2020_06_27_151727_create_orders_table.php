@@ -18,13 +18,12 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string('quantity');
             $table->bigInteger('customer_id')->unsigned()->index();
-            $table->bigInteger('product_id')->unsigned()->index();
-            $table->double('total_price')->unsigned();
+            $table->bigInteger('product_id')->unsigned()->index();           
             $table->string('paid')->default(Order::UNPAID_ORDER);
             $table->string('processed')->default(Order::UNPROCESSED_ORDER);
             $table->string('delivered')->default(Order::UNDELIVERED_ORDER);
-            $table->date('date_placed');
-            $table->date('date_delivered');
+            $table->date('date_placed')->nullable();
+            $table->date('date_delivered')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
